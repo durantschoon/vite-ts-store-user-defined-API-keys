@@ -12,18 +12,22 @@ const APIKeysSchema = z.object({
 type APIKeys = Array<z.infer<typeof APIKeysSchema>>
 
 /* 
-  create a .env file in the repo (ignored in _gitignore)
-  Add lines for your keys, e.g.
-  UNSPLASH_API_KEY=YOUR_KEY_HERE
+  If you want to predefine your own keys, but keep them out of your git repo,
+  Create a .env file in this repo (which is has been ignored in _gitignore)
+  Add variables for your keys, e.g.
+  VITE_UNSPLASH_API_KEY=YOUR_KEY_HERE
+  Note that only variables beginning with 'VITE_' can be accessed by a vite app
 */ 
 
 const apiKeyData: APIKeys = [
   {
     shortName: 'unsplash',
     url: 'https://api.unsplash.com/search/photos',
-    apiKey: import.meta.env.UNSPLASH_API_KEY
+    apiKey: import.meta.env.VITE_UNSPLASH_API_KEY
   }
 ]
+
+console.log(import.meta.env)
 
 function App() {
   const [apiKeys, setApiKeys] = useState(apiKeyData)
