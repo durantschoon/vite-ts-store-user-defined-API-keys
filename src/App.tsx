@@ -17,7 +17,7 @@ type APIKeys = Array<z.infer<typeof APIKeysSchema>>
   UNSPLASH_API_KEY=YOUR_KEY_HERE
 */ 
 
-keyData = [
+const apiKeyData: APIKeys = [
   {
     shortName: 'unsplash',
     url: 'https://api.unsplash.com/search/photos',
@@ -26,7 +26,7 @@ keyData = [
 ]
 
 function App() {
-  const [apiKeys, setApiKeys] = useState({} as APIKeys)
+  const [apiKeys, setApiKeys] = useState(apiKeyData)
 
   return (
     <div className="App">
