@@ -3,13 +3,13 @@ import { z } from "zod";
 
 import './App.css'
 
-const APIKeysSchema = z.object({
+const APIKeySchema = z.object({
   shortName: z.string().optional(),
   url: z.string().url(),
   apiKey: z.string().optional()
 })
 
-type APIKeys = Array<z.infer<typeof APIKeysSchema>>
+type APIKeys = Array<z.infer<typeof APIKeySchema>>
 
 /* 
   If you want to predefine your own keys, but keep them out of your git repo,
@@ -34,12 +34,22 @@ function App() {
 
   return (
     <div className="App">
-      <div className="card">
-        <button className="fa fa-key" >
-        </button>
-        <p>
-          Click the key button to add an API key
-        </p>
+      <div className="container">
+        <div className="card">
+            <div className="image">
+              {/* <img src="https://i.pinimg.com/originals/a4/7b/a5/a47ba59b4a353e0928ef0551ca44f980.jpg"/> */}
+              <div className="button-and-text">
+                <button className="fa fa-key key-button" >
+                </button>
+                <p>
+                  Click the key button to add an API key
+                </p>
+              </div>
+            </div>
+          <div className="content">
+            Hi!
+          </div>
+        </div>
       </div>
     </div>
   )
