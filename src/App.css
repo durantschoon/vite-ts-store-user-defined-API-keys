@@ -5,88 +5,39 @@
   text-align: center;
 }
 
-.container {
-  position : relative;
-  width : 1100px;
-  display : flex;
-  align-items : center;
-  justify-content : center;
-  flex-warp : warp;
-  padding : 30px;  
+#App {
+  height: 100%;
+  width: 100%;
 }
 
-.container .card {
-  position: relative;
-  max-width : 300px;
-  height : 215px;  
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   background-color : #fff;
-  margin : 30px 10px;
-  padding : 20px 15px;
+  width: auto;
+  margin : 3rem 3rem;
+  padding : 2rem 2rem;
   
-  display : flex;
-  flex-direction : column;
   box-shadow : 0 5px 20px rgba(0,0,0,0.5);
-  transition : 0.3s ease-in-out;
   border-radius : 15px;
-}
-
-.container .card .image {  
-  border-radius : 15px;
-  background-color: #fff;
-
-  position : relative;
-  width : 260px;
-  height : 260px;
-  
-  top : -40%;
-  box-shadow : 0 5px 20px rgba(0,0,0,0.2);
-  z-index : 1;
 }
 
 .container .card .image .button-and-text {
   display : flex;
   flex-direction : column;
   justify-content: center;
-
-  height: 240px;
 }
 
-/* .container .card .image img { */
-
-.container .card .image img {
-  max-width : 100%;
-  border-radius : 15px;
+#apiKeysDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.container .card .content {
-  position : relative;
-  top : -140px;
-  padding : 10px 15px;
-  color : #111;
-  text-align : center;
-
+.apiKeysDiv-hidden {
   visibility : hidden;
   opacity : 0;
   transition : 0.3s ease-in-out;
-}
-
-.container .card:hover, .container-revealed {
-  /* .container .card:hover { */
-/* .container-revealed { */
-  height : 320px;    
-}
-
-/* .content-hidden {
-  visibility : hidden;
-  opacity : 0;
-  transition : 0.3s ease-in-out;
-} */
-
-.container .card:hover .content, .content-revealed {
-  /* .container .card:hover .content { */
-/* .content-revealed { */
-   margin-top : 30px;
-   visibility : visible;
-   opacity : 1;
-   transition-delay: 0.2s;
 }
