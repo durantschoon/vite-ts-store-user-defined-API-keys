@@ -29,9 +29,6 @@
   transition : 0.3s ease-in-out;
   border-radius : 15px;
 }
-.container .card:hover {
-  height : 320px;    
-}
 
 .container .card .image {  
   border-radius : 15px;
@@ -67,17 +64,29 @@
   padding : 10px 15px;
   color : #111;
   text-align : center;
-  
+
   visibility : hidden;
   opacity : 0;
   transition : 0.3s ease-in-out;
-    
 }
 
-.container .card:hover .content {
+.container .card:hover, .container-revealed {
+  /* .container .card:hover { */
+/* .container-revealed { */
+  height : 320px;    
+}
+
+/* .content-hidden {
+  visibility : hidden;
+  opacity : 0;
+  transition : 0.3s ease-in-out;
+} */
+
+.container .card:hover .content, .content-revealed {
+  /* .container .card:hover .content { */
+/* .content-revealed { */
    margin-top : 30px;
    visibility : visible;
    opacity : 1;
    transition-delay: 0.2s;
-  
 }

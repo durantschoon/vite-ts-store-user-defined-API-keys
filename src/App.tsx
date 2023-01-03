@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, MouseEvent } from 'react'
 import { z } from "zod";
 
 import './App.css'
@@ -31,22 +31,40 @@ console.log(import.meta.env)
 
 function App() {
   const [apiKeys, setApiKeys] = useState(apiKeyData)
+  // const containerRef = useRef(null)
+  // const cardRef = useRef(null)
+
+  const handleClick = (event: MouseEvent) => {
+    event.stopPropagation()
+    // containerRef?.current?.classList.add("container-revealed")
+    const theContainer = document.getElementById("the-container")!
+    const theContent = document.getElementById("the-content")!
+    theContainer.classList.add("container-revealed")
+    theContent.classList.remove("content-hidden")
+    theContent.classList.add("content-revealed")
+    console.log("button was clicked!")
+  }
 
   return (
     <div className="App">
-      <div className="container">
+    {/* <div className="container" ref={containerRef}>
+      <div className="card" ref={cardRef}> */}
+      <div className="container" id="the-container">
         <div className="card">
             <div className="image">
               {/* <img src="https://i.pinimg.com/originals/a4/7b/a5/a47ba59b4a353e0928ef0551ca44f980.jpg"/> */}
               <div className="button-and-text">
-                <button className="fa fa-key key-button" >
+                <button 
+                className="fa fa-key key-button" 
+                onClick={handleClick}
+                >
                 </button>
                 <p>
                   Click the key button to add an API key
                 </p>
               </div>
             </div>
-          <div className="content">
+          <div className="content content-hidden" id="the-content">
             Hi!
           </div>
         </div>
