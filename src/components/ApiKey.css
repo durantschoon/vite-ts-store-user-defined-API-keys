@@ -1,0 +1,35 @@
+.apiKey-container {
+    display: table;
+}
+
+.apiKey-row {
+    display: table-row;
+}
+
+.apiKey-blockRow {
+    margin-top: 4px;
+    padding-top: 8px;
+    padding-left: 3px;
+}
+
+.apiKey-blockRow:nth-child(even) {
+    background: #CCC;
+    border-radius: 4px;
+}
+
+label,
+input {
+    display: table-cell;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    padding-left: 4px;
+}
+
+label {
+    padding-right: 10px;
+    text-align: right;
+}
+
+input {
+    min-width: 24rem;
+}
